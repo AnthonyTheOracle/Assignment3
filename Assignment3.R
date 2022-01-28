@@ -22,10 +22,10 @@ polls
 
 #updating the above script with data.frame data structure
 
-polls.df <- data.frame(Name, ABC, CBS)
+polls.df <- data.frame(Name, ABC, CBS, stringsAsFactors = FALSE)
 polls.df
 
-#The issue with numeric was solved with the use of data.frame
+#The issue with numeric was solved with the use of data.frame and sapply function
 #> polls.df
 ##    Name ABC CBS
 #1     Jeb   4  12
@@ -35,5 +35,12 @@ polls.df
 #5   Carly   2   1
 #6 Hillary  14  21
 #7  Berine  15  19
+
+# Working with descriptive statistical packages
+# using sapply with mean function
+sapply(polls.df[c('ABC', 'CBS')], mean, 2)
+
+#using summary function
+summary(polls.df)
 
 
